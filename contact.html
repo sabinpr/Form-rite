@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form-Rite Co. | Quality, Innovation & Craftsmanship</title>
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Splide CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+    />
+
+    <!-- Splide JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+
+    <!-- CSS  -->
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/main-responsive.css" />
+    <link rel="stylesheet" href="./css/inner-content.css" />
+  </head>
+  <body class="site-wrapper">
+    <!-- HEADER NAVIGATION -->
+    <header class="main-header">
+      <div class="wrapper">
+        <div class="container main-header__inner">
+          <div class="main-header__logo">
+            <a href="./index.html">
+              <img src="./images/Formrite-logo.svg" alt="Form-Rite Co." />
+            </a>
+          </div>
+          <div class="main-header__links">
+            <nav class="main-nav">
+              <ul class="main-nav__list">
+                <li class="main-nav__item">
+                  <a href="./about.html" class="main-nav__link"> About Us </a>
+                </li>
+                <li class="main-nav__item">
+                  <a href="./inspiration.html" class="main-nav__link"
+                    >Inspiration</a
+                  >
+                </li>
+                <li class="main-nav__item main-nav__item--dropdown">
+                  <span class="main-nav__link">
+                    Products
+                    <i class="fas fa-chevron-down"></i>
+                  </span>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="./product.html" class="dropdown-link">
+                        Stone & Porcelain
+                      </a>
+                    </li>
+                    <li>
+                      <a href="./product.html" class="dropdown-link">pétra</a>
+                    </li>
+                    <li>
+                      <a href="./product.html" class="dropdown-link">cubo</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="main-nav__item">
+                  <a href="./contact.html" class="main-nav__link active">
+                    Contact Us
+                  </a>
+                </li>
+              </ul>
+            </nav>
+
+            <div class="main-header__cta">
+              <a href="tel:+61297926600" class="btn--header">
+                <i class="fas fa-phone"></i><span>+61 2 9792 6600</span>
+              </a>
+            </div>
+            <button
+              class="mobile-nav-toggle"
+              aria-label="Toggle navigation"
+              id="menu-toggle"
+            >
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-page-section">
+      <div class="contact-page-grid">
+        <!-- LEFT: Info & Wave -->
+        <div class="contact-image-container">
+          <img src="./images/inspiration-banner.png" alt="Contact Banner" />
+        </div>
+
+        <!-- RIGHT: Form -->
+        <div class="form-container">
+          <div class="form-wrapper">
+            <div class="form-header">
+              <h2>Begin Your Journey with Form-rite!</h2>
+              <p>
+                Ready to transform your space with premium surfaces? Complete
+                the form below to receive assistance from our expert team.
+              </p>
+            </div>
+            <form>
+              <input type="text" placeholder="Your Name" class="form-input" />
+              <input
+                type="email"
+                placeholder="Your Email Address"
+                class="form-input"
+              />
+              <input
+                type="tel"
+                placeholder="Your Contact Number"
+                class="form-input"
+              />
+
+              <div class="select-box">
+                <select class="form-select">
+                  <option disabled selected>
+                    Product you are interested in
+                  </option>
+                  <option value="stone">Stone & Porcelain</option>
+                  <option value="marble">Pétra</option>
+                  <option value="furniture">Cubo</option>
+                </select>
+              </div>
+
+              <textarea
+                placeholder="Describe how we can help"
+                class="form-textarea"
+                rows="2"
+              ></textarea>
+
+              <button type="submit" class="btn--submit">
+                Submit <i class="fas fa-arrow-right"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+      <div class="wrapper">
+        <div class="container">
+          <div class="footer-grid">
+            <div class="footer-brand">
+              <img
+                src="./images/White-Form-rite_logo.svg"
+                alt="Form-Rite Co."
+                class="footer-logo"
+              />
+              <p class="footer-tagline">
+                Explore Style, Quality and Innovation
+              </p>
+              <div class="footer-sub-brands">
+                <h4 class="footer-heading">Our Brands</h4>
+                <p class="brand-text">pétra</p>
+                <p class="brand-text">cubo</p>
+              </div>
+            </div>
+
+            <div class="footer-nav-col">
+              <h4 class="footer-heading">Our Products</h4>
+              <ul class="footer-links">
+                <li><a href="#">Stone & Porcelain Worktops</a></li>
+                <li><a href="#">Marble by Pétra</a></li>
+                <li><a href="#">Furniture by Cubo</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-nav-col">
+              <h4 class="footer-heading">Quick Links</h4>
+              <ul class="footer-links">
+                <li><a href="./about.html">About Us</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Testimonials</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Contact Us</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-nav-col">
+              <h4 class="footer-heading">Contact</h4>
+              <p class="footer-contact">
+                <span>Phone:</span
+                ><a href="tel:+61297926600">+ 61 2 9792 6600</a>
+              </p>
+              <p class="footer-contact">
+                <span>Email:</span>
+                <a href="mailto:sales@form-rite.com.au"
+                  >sales@form-rite.com.au
+                </a>
+              </p>
+              <h4 class="footer-heading footer-heading--margin">Location</h4>
+              <address class="footer-address">
+                37A-41 Bryant St, Padstow NSW 2211
+              </address>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <div class="footer-legal">
+              <p>
+                Copyright © 2025 Form Rite. All rights reserved.
+                <span class="dot-dot">•</span> <a href="#">Terms</a>
+                <span class="dot-dot">•</span> <a href="#">Privacy</a>
+              </p>
+            </div>
+            <div class="footer-socials">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./js/dropdown.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

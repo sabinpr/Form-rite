@@ -1,0 +1,609 @@
+/* Header  */
+.main-header {
+  max-height: var(--navbar-height);
+  padding: var(--navbar-padding);
+  position: relative;
+  z-index: 1000;
+  background-color: var(--color-white); /* Ensures header is solid */
+}
+
+.main-header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-header__logo img {
+  width: 100%;
+  max-width: 100%;
+  height: 55px;
+  object-fit: contain;
+  object-position: center left;
+}
+.main-header__links {
+  display: flex;
+  align-items: center;
+}
+.main-nav__list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+  margin-right: 4rem;
+}
+
+.main-nav__item {
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  letter-spacing: 0;
+}
+.main-nav__link {
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: var(--transition);
+  cursor: pointer;
+}
+.main-nav__link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0; /* Move to the middle */
+  width: 0; /* Start hidden */
+  height: 2px; /* Thickness */
+  background-color: var(--color-black); /* Your palette color */
+  transition: width 0.3s ease-in-out;
+}
+
+.main-nav__link:hover::after,
+.main-nav__link.active::after {
+  width: 50%; /* This defines the "half underline" */
+}
+.btn--header {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.btn--header i {
+  /* 1. Make it a fixed-size square box */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.2rem;
+  height: 4.2rem;
+
+  /* 2. Control the icon (glyph) size */
+  font-size: var(--icon-size);
+
+  line-height: 1;
+
+  vertical-align: middle;
+
+  background: var(--color-black);
+  color: var(--color-white);
+}
+.btn--header span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 4.2rem;
+  background: var(--color-black);
+  color: var(--color-white);
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  letter-spacing: 0;
+  padding: 0 1.2rem;
+}
+.btn--header:hover i,
+.btn--header:hover span {
+  opacity: 0.9;
+}
+
+/* DropDOwn  */
+
+.main-nav__link i {
+  padding-left: 1rem;
+  font-size: 1.1rem;
+  align-items: center;
+}
+
+/* 1. Parent Positioning */
+.main-nav__item--dropdown {
+  position: relative; /* Anchor for the absolute dropdown */
+}
+
+/* 2. Dropdown Container */
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* Sits directly below the link */
+  left: 0;
+  width: 18rem;
+  background-color: var(--color-white);
+  list-style: none;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+  /* Animation: Start hidden and slightly lower */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+/* 3. Show on Hover */
+.main-nav__item--dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* 4. Dropdown Individual Links */
+.dropdown-link {
+  display: block;
+  padding: 1rem 2.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  letter-spacing: 0;
+  transition: background 0.2s ease;
+}
+
+.dropdown-link:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+/* 5. Handle the Chevron Icon */
+.nav-icon {
+  font-size: 1.2rem; /* Smaller than the 4.2rem buttons */
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+/* Rotate chevron when parent is hovered */
+.main-nav__item--dropdown:hover .nav-icon {
+  transform: rotate(180deg);
+}
+
+/* Ensure the half-underline doesn't cover the whole width including icon */
+.main-nav__item--dropdown .main-nav__link::after {
+  max-width: 60px; /* Optional: limits the underline length on the dropdown trigger */
+}
+
+/* Banner Section  */
+
+.hero {
+  position: relative;
+  /* Calculate height: 100% viewport height minus navbar */
+  height: calc(100vh - var(--navbar-height));
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: end;
+  padding: 4rem 0;
+  background: linear-gradient(
+    360deg,
+    rgba(0, 0, 0, 0.3) 36.5%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.banner-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* This makes the img behave like a background-cover */
+  object-fit: cover;
+  object-position: center;
+  z-index: -1; /* Pushes image behind the text */
+}
+
+/* Optional: Add a dark overlay so text is easier to read */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Subtle dark tint */
+  z-index: 0;
+}
+
+.hero .wrapper {
+  position: relative;
+  z-index: 1; /* Ensures content stays above the image and overlay */
+  width: 100%;
+}
+
+.hero__content {
+  color: var(--color-white);
+  text-align: center;
+}
+
+.hero__title {
+  color: var(--color-white); /* Override default if needed */
+  margin-bottom: 2.4rem;
+}
+
+/* Scroll Section Styles */
+.hero__scroll {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+}
+
+.hero__scroll-text {
+  font-family: var(--body-font);
+  font-size: 1.6rem;
+  letter-spacing: 0;
+  font-weight: 500;
+  line-height: 2.4rem;
+
+  /* FIX 1: Add relative positioning so the line stays under the text */
+  position: relative;
+  padding-bottom: 2px; /* Give the line some breathing room */
+  display: inline-block; /* Ensures the span respects height/padding */
+}
+
+.hero__scroll-text::after,
+.footer-links a::after,
+.footer-contact a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-white);
+  transition: width 0.3s ease-in-out;
+}
+
+/* FIX 2 & 3: Match the class name and add :hover */
+.hero__scroll:hover .hero__scroll-text::after,
+.footer-links a:hover::after,
+.footer-contact a:hover::after {
+  width: 100%; /* Or 50% if you still want the half-underline look */
+}
+
+.hero__scroll-icon {
+  font-size: 1.6rem;
+  animation: bounce 2s infinite;
+  color: var(--color-white); /* Ensure it is visible against the banner */
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
+}
+
+/* Footer Section  */
+
+.main-footer {
+  background: var(--color-black);
+  color: var(--color-white);
+  padding: 8rem 0 4rem;
+}
+.footer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem 2rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 6.4rem;
+  border-bottom: 1px solid #57534e;
+}
+.footer-logo {
+  max-width: 291px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 2.4rem;
+}
+.footer-tagline {
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  letter-spacing: 0;
+  color: var(--footer-text-white);
+  margin-bottom: 4.8rem;
+}
+.footer-sub-brands p {
+  font-family: var(--beautiful-font);
+  font-weight: 400;
+  font-size: 5.5rem;
+  line-height: 7.5rem;
+  letter-spacing: 4%;
+  color: var(--color-white);
+}
+.footer-sub-brands p + p {
+  margin-top: 6px;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.footer-contact span {
+  font-family: var(--body-font);
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  color: var(--footer-text-white);
+  display: inline-block;
+  padding-right: 0.5rem;
+}
+.footer-contact + .footer-contact {
+  margin-top: 1.4rem;
+  display: flex;
+}
+.footer-links a,
+.footer-contact a {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 2px;
+  font-family: var(--body-font);
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  letter-spacing: 0;
+  color: var(--footer-text-white);
+}
+
+.footer-heading--margin {
+  margin-top: 4.8rem;
+}
+
+.footer-bottom {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 3.4rem;
+}
+
+.footer-legal p {
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  letter-spacing: 0;
+  color: var(--footer-text-white);
+}
+.footer-legal .dot-dot {
+  display: inline-block;
+  color: #79716b;
+  padding: 0 2.4rem;
+}
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.footer-socials i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  font-size: 2rem;
+  line-height: 1;
+
+  vertical-align: middle;
+  color: var(--footer-text-white);
+}
+
+/* Contact Section  */
+
+.contact-section {
+  background-image: url("../images/marble-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 11.2rem 0;
+}
+
+/* The Main Card */
+.contact-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: var(--color-white);
+  box-shadow: -12px 12px 24px 0px #0000001a;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+/* Left Black Info Side */
+.contact-card__info {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.contact-card__text-content {
+  z-index: 2;
+  padding: 5.5rem 4rem 18rem 5rem;
+}
+
+.contact-card__text-content h2 {
+  color: var(--color-white);
+  font-weight: 400;
+  font-size: 3.2rem;
+  line-height: 4.8rem;
+  letter-spacing: 0;
+  max-width: 34rem;
+  text-transform: capitalize;
+  margin-bottom: 2.4rem;
+}
+.contact-card__text-content p {
+  color: var(--form-text-white);
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  letter-spacing: 0%;
+  margin-bottom: 2.4rem;
+}
+.contact-list {
+  list-style: none;
+}
+.contact-list li {
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  letter-spacing: 0%;
+  color: var(--form-text-white);
+  margin-bottom: 2.4rem;
+}
+.contact-list i {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+/* The Wavy Marble Texture */
+.marble-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 25%; /* Controls how much marble is visible */
+}
+
+.marble-wave img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  clip-path: url(#contact-wave); /* Links to the SVG above */
+}
+
+/* Right Form Side */
+.contact-card__form {
+  padding: 5.4rem 4.8rem 5.4rem 5.4rem;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 1.15rem 2rem;
+  margin-bottom: 2.4rem;
+  border: 1px solid var(--color-dark-gray);
+  font-family: var(--body-font);
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 3.2rem;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: var(--color-dark-gray);
+  height: 5.5rem;
+}
+.form-input::placeholder,
+.form-textarea::placeholder,
+.form-select:invalid,
+.form-select option[value=""][disabled] {
+  color: var(--color-dark-gray);
+}
+.form-textarea {
+  height: 10rem;
+}
+/* 1. Hide the default browser arrow */
+.form-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* Add extra right padding so text doesn't hit the icon */
+  padding-right: 4.5rem !important;
+  cursor: pointer;
+}
+
+/* 2. Position the parent container */
+.select-box {
+  position: relative;
+  width: 100%;
+}
+
+/* 3. Add the Font Awesome Icon */
+.select-box::after {
+  /* This is the Font Awesome 'Chevron Down' Unicode */
+  content: "\f078";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900; /* Required for solid icons */
+
+  /* Positioning */
+  position: absolute;
+  right: 2rem; /* Match your input horizontal padding */
+  top: 50%;
+  transform: translateY(-50%);
+
+  /* Styling */
+  font-size: 1.2rem;
+  color: var(--color-dark-gray);
+
+  /* CRITICAL: Allows clicks to pass through to the select menu */
+  pointer-events: none;
+
+  /* Small adjustment to account for your line-height/padding offset */
+  margin-top: -1.2rem;
+}
+
+/* 4. Optional: Change icon color on hover */
+.select-box:hover::after {
+  color: var(--color-black);
+}
+.select-box:focus-within::after {
+  color: var(--color-black);
+}
+/* Submit Button */
+.btn--submit {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 1.2rem 2.4rem;
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  cursor: pointer;
+  width: fit-content;
+}
+.btn--submit:hover {
+  opacity: 0.9;
+}
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  /* 1. This removes the default blue outline */
+  outline: 1px solid var(--color-black);
+}
+
+/* Ensure the transition is smooth (add this to the base styles of the inputs) */
+.form-input,
+.form-select,
+.form-textarea {
+  transition: all 0.2s ease-in-out;
+}
