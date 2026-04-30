@@ -38,27 +38,61 @@ document.addEventListener("DOMContentLoaded", function () {
     }).mount();
   }
 
+  // --- Thumbnail Product Gallery ---
+  var thumbnailCarouselEl = document.querySelector("#thumbnail-carousel");
+  if (thumbnailCarouselEl) {
+    var splide = new Splide(thumbnailCarouselEl, {
+      perPage: 4, // This ensures exactly 4 images are shown
+      perMove: 1,
+      isNavigation: true, // Clickable
+      gap: "1rem", // Space between images
+      pagination: false,
+      arrows: false,
+      rewind: true,
+      breakpoints: {
+        768: {
+          perPage: 4, // Keep 4 on tablets
+          gap: "1rem",
+        },
+        480: {
+          perPage: 3, // Show 3 on very small phones so they don't get too tiny
+        },
+      },
+    });
+
+    splide.mount();
+
+    const mainImage = document.getElementById("main-product-image");
+    if (mainImage) {
+      splide.on("active", function (slide) {
+        const imgInsideSlide = slide.slide.querySelector("img");
+        if (imgInsideSlide) {
+          mainImage.src = imgInsideSlide.src;
+        }
+      });
+    }
+  }
+
+  // --- Zoom on Scroll Logic ---
   const zoomImages = document.querySelectorAll(".project-card__image");
-  if (zoomImages) {
+  if (zoomImages.length > 0) {
     window.addEventListener("scroll", () => {
       zoomImages.forEach((img) => {
         const rect = img.getBoundingClientRect();
         const windowHeight = window.innerHeight;
 
-        // Check if the image is within the user's view
         if (rect.top < windowHeight && rect.bottom > 0) {
-          // Calculate a percentage (0 to 1) based on where the image is in the viewport
-          // 0 = just entered the bottom, 1 = just leaving the top
           const distance = windowHeight - rect.top;
           const totalDistance = windowHeight + rect.height;
           const percentage = distance / totalDistance;
-
-          // Scale from 1.0 to 1.2 based on that percentage
           const scale = 1 + percentage * 0.2;
-
           img.style.transform = `scale(${scale})`;
         }
       });
     });
   }
 });
+
+function goToIndex() {
+  window.location.href = "index.html";
+}

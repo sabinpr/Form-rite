@@ -252,10 +252,20 @@
   padding-bottom: 2px; /* Give the line some breathing room */
   display: inline-block; /* Ensures the span respects height/padding */
 }
-
+.link-arrow {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  /* FIXES */
+  width: fit-content; /* Only as wide as the text + icon */
+  position: relative; /* Anchor the absolute ::after to this element */
+  text-decoration: none; /* Remove default link underline */
+  color: inherit;
+}
 .hero__scroll-text::after,
 .footer-links a::after,
-.footer-contact a::after {
+.footer-contact a::after,
+.link-arrow::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -269,7 +279,8 @@
 /* FIX 2 & 3: Match the class name and add :hover */
 .hero__scroll:hover .hero__scroll-text::after,
 .footer-links a:hover::after,
-.footer-contact a:hover::after {
+.footer-contact a:hover::after,
+.link-arrow:hover::after {
   width: 100%; /* Or 50% if you still want the half-underline look */
 }
 
@@ -436,12 +447,26 @@
 
 /* Left Black Info Side */
 .contact-card__info {
-  background-color: var(--color-black);
+  background-image: url("../images/form-bg-main.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+
   color: var(--color-white);
   position: relative;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+}
+
+.contact-card__info::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.66); /* Subtle dark tint */
+  z-index: 0;
 }
 
 .contact-card__text-content {
@@ -486,17 +511,31 @@
 /* The Wavy Marble Texture */
 .marble-wave {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 25%; /* Controls how much marble is visible */
+  /* 1. Pull the container slightly outside the bounds to cover sub-pixel gaps */
+  bottom: -1px;
+  left: -1px;
+  right: -1px; /* Setting right: -1px instead of width: 100% is more stable */
+
+  /* 2. Increase height slightly to compensate for bottom: -1px */
+  height: calc(25% + 2px);
+
+  /* 3. Force zero line-height to prevent inline-block ghost spacing */
+  line-height: 0;
+  font-size: 0;
 }
 
 .marble-wave img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  clip-path: url(#contact-wave); /* Links to the SVG above */
+  display: block; /* Removes the default bottom gap for images */
+
+  /* 4. The "Scale Hack" - slightly zoom the image to ensure the clip-path 
+        reaches the absolute edge of the container pixels */
+  transform: scale(1.02);
+  transform-origin: bottom left;
+
+  clip-path: url(#contact-wave);
 }
 
 /* Right Form Side */

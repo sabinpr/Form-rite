@@ -95,19 +95,44 @@
             <!-- LEFT SIDE: Gallery -->
             <div class="product-gallery">
               <div class="main-image">
+                <!-- This image will change when you click thumbnails -->
                 <img
+                  id="main-product-image"
                   src="./images/product-mia/mia-coffee.jpg"
                   alt="MIA Coffee Table"
                 />
               </div>
-              <div class="thumbnail-grid">
-                <img src="./images/product-mia/mia-1.png" alt="Thumbnail 1" />
-                <img src="./images/product-mia/mia-2.png" alt="Thumbnail 2" />
-                <img src="./images/product-mia/mia-3.png" alt="Thumbnail 3" />
-                <div class="thumbnail-placeholder">
-                  <img src="./images/product-mia/mia-4.png" alt="PlaceHolder" />
+
+              <!-- Splide Carousel -->
+              <div id="thumbnail-carousel" class="splide">
+                <div class="splide__track">
+                  <ul class="splide__list">
+                    <li class="splide__slide">
+                      <img
+                        src="./images/product-mia/mia-coffee.jpg"
+                        alt="Thumbnail 1"
+                      />
+                    </li>
+                    <li class="splide__slide">
+                      <img
+                        src="./images/product-mia/mia-1.png"
+                        alt="Thumbnail 2"
+                      />
+                    </li>
+                    <li class="splide__slide">
+                      <img
+                        src="./images/product-mia/mia-2.png"
+                        alt="Thumbnail 3"
+                      />
+                    </li>
+                    <li class="splide__slide">
+                      <img
+                        src="./images/product-mia/mia-3.png"
+                        alt="Thumbnail 4"
+                      />
+                    </li>
+                  </ul>
                 </div>
-                <!-- Representing the empty/logo box -->
               </div>
             </div>
 
@@ -281,11 +306,13 @@
         <div class="container">
           <div class="footer-grid">
             <div class="footer-brand">
-              <img
-                src="./images/White-Form-rite_logo.svg"
-                alt="Form-Rite Co."
-                class="footer-logo"
-              />
+              <a href="./index.html">
+                <img
+                  src="./images/White-Form-rite_logo.svg"
+                  alt="Form-Rite Co."
+                  class="footer-logo"
+                />
+              </a>
               <p class="footer-tagline">
                 Explore Style, Quality and Innovation
               </p>
@@ -339,9 +366,12 @@
           <div class="footer-bottom">
             <div class="footer-legal">
               <p>
-                Copyright © 2025 Form Rite. All rights reserved.
-                <span class="dot-dot">•</span> <a href="#">Terms</a>
-                <span class="dot-dot">•</span> <a href="#">Privacy</a>
+                <span class="copyright">
+                  Copyright © 2025 Form Rite. All rights reserved. </span
+                ><span class="terms-service">
+                  <span class="dot-dot">•</span> <a href="#">Terms</a>
+                  <span class="dot-dot">•</span> <a href="#">Privacy</a></span
+                >
               </p>
             </div>
             <div class="footer-socials">

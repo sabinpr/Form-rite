@@ -247,19 +247,23 @@
 
           <!-- Project Item -->
           <article class="project-card">
-            <div class="project-card__image-wrapper">
-              <img
-                src="./images/product-2.jpg"
-                alt="Kyle Bay Project"
-                class="project-card__image"
-              />
-            </div>
-            <div class="project-card__details">
-              <span class="project-card__meta">Project Category ———— Date</span>
-              <h3 class="project-card__title">
-                <span>KYLE BAY</span> <i class="fas fa-arrow-right"></i>
-              </h3>
-            </div>
+            <a href="./inspiration-detail.html">
+              <div class="project-card__image-wrapper">
+                <img
+                  src="./images/product-2.jpg"
+                  alt="Kyle Bay Project"
+                  class="project-card__image"
+                />
+              </div>
+              <div class="project-card__details">
+                <span class="project-card__meta"
+                  >Project Category ———— Date</span
+                >
+                <h3 class="project-card__title">
+                  <span>KYLE BAY</span> <i class="fas fa-arrow-right"></i>
+                </h3>
+              </div>
+            </a>
           </article>
 
           <!-- Project Item -->
@@ -495,60 +499,281 @@
         <div class="container">
           <div class="tab-system">
             <div class="tab-system__header">
-              <button class="tab-btn btn-active">Stone & Porcelain</button>
-              <button class="tab-btn">Marble by Pétra</button>
-              <button class="tab-btn">Cubo Furniture</button>
+              <button class="tab-btn btn-active" data-tab="stone">
+                Stone & Porcelain
+              </button>
+              <button class="tab-btn" data-tab="marble">Marble by Pétra</button>
+              <button class="tab-btn" data-tab="cubo">Cubo Furniture</button>
             </div>
-
-            <div class="accordion">
-              <div class="accordion__item accordion__item--active">
-                <div class="accordion__header">
-                  <span>
-                    How Do I Choose the Right Kitchen Benchtop Surface?
-                  </span>
-                  <i class="fas fa-arrow-up"></i>
+            <div id="stone" class="tab-content tab-active">
+              <div class="accordion">
+                <div class="accordion__item">
+                  <div class="accordion__header">
+                    <span>
+                      How Do I Choose the Right Kitchen Benchtop Surface?
+                    </span>
+                    <i class="fas fa-arrow-down"></i>
+                  </div>
+                  <div class="accordion__body">
+                    <div class="faq-content">
+                      <h4>Porcelain</h4>
+                      <p>
+                        <i class="fas fa-dot-circle"></i>
+                        <span>
+                          <span class="faq-bold"
+                            >Highly Durable & Low Maintenance</span
+                          >
+                          – Resistant to scratches, heat, and stains, with a
+                          non-porous surface that requires minimal upkeep.
+                        </span>
+                      </p>
+                      <h4>Dekton</h4>
+                      <p>
+                        <i class="fas fa-dot-circle"></i>
+                        <span>
+                          <span class="faq-bold">Ultra-Compact & Seamless</span>
+                          – Extremely strong, resistant to heat, UV, and stains,
+                          with large slab sizes for a sleek, modern finish.
+                        </span>
+                      </p>
+                      <h4>Engineered Stone (Quartz)</h4>
+                      <p>
+                        <i class="fas fa-dot-circle"></i>
+                        <span>
+                          <span class="faq-bold"
+                            >Easy to Maintain & Durable</span
+                          >
+                          – Non-porous, stain-resistant, and scratch-resistant,
+                          making it ideal for busy kitchens.
+                        </span>
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div class="accordion__body">
-                  <div class="faq-content">
-                    <h4>Porcelain</h4>
-                    <p>
-                      <i class="fas fa-dot-circle"></i>
-                      <span>
-                        <span class="faq-bold"
-                          >Highly Durable & Low Maintenance</span
-                        >
-                        – Resistant to scratches, heat, and stains, with a
-                        non-porous surface that requires minimal upkeep.
-                      </span>
-                    </p>
-                    <h4>Dekton</h4>
-                    <p>
-                      <i class="fas fa-dot-circle"></i>
-                      <span>
-                        <span class="faq-bold">Ultra-Compact & Seamless</span> –
-                        Extremely strong, resistant to heat, UV, and stains,
-                        with large slab sizes for a sleek, modern finish.
-                      </span>
-                    </p>
-                    <h4>Engineered Stone (Quartz)</h4>
-                    <p>
-                      <i class="fas fa-dot-circle"></i>
-                      <span>
-                        <span class="faq-bold">Easy to Maintain & Durable</span>
-                        – Non-porous, stain-resistant, and scratch-resistant,
-                        making it ideal for busy kitchens.
-                      </span>
-                    </p>
+                <div class="accordion__item">
+                  <div class="accordion__header">
+                    <span>
+                      How Do I Choose the Right Kitchen Benchtop Surface?
+                    </span>
+                    <i class="fas fa-arrow-down"></i>
+                  </div>
+                  <div class="accordion__body">
+                    <div class="faq-content">
+                      <h4>Porcelain</h4>
+                      <p>
+                        <i class="fas fa-dot-circle"></i>
+                        <span>
+                          <span class="faq-bold"
+                            >Highly Durable & Low Maintenance</span
+                          >
+                          – Resistant to scratches, heat, and stains, with a
+                          non-porous surface that requires minimal upkeep.
+                        </span>
+                      </p>
+                      <h4>Dekton</h4>
+                      <p>
+                        <i class="fas fa-dot-circle"></i>
+                        <span>
+                          <span class="faq-bold">Ultra-Compact & Seamless</span>
+                          – Extremely strong, resistant to heat, UV, and stains,
+                          with large slab sizes for a sleek, modern finish.
+                        </span>
+                      </p>
+                      <h4>Engineered Stone (Quartz)</h4>
+                      <p>
+                        <i class="fas fa-dot-circle"></i>
+                        <span>
+                          <span class="faq-bold"
+                            >Easy to Maintain & Durable</span
+                          >
+                          – Non-porous, stain-resistant, and scratch-resistant,
+                          making it ideal for busy kitchens.
+                        </span>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="accordion__item">
-                <div class="accordion__header">
-                  <span
-                    >What is the check measure, fabrication & installation
-                    process</span
-                  >
-                  <i class="fas fa-arrow-down"></i>
+            </div>
+            <div id="marble" class="tab-content">
+              <div class="accordion">
+                <div class="accordion__item">
+                  <div class="accordion__header">
+                    <span>
+                      How Do I Choose the Right Kitchen Benchtop Surface?
+                    </span>
+                    <i class="fas fa-arrow-down"></i>
+                  </div>
+                  <div class="accordion__body">
+                    <div class="faq-content">
+                      <h4>Porcelain</h4>
+                      <p>
+                        <i class="fas fa-dot-circle"></i>
+                        <span>
+                          <span class="faq-bold"
+                            >Highly Durable & Low Maintenance</span
+                          >
+                          – Resistant to scratches, heat, and stains, with a
+                          non-porous surface that requires minimal upkeep.
+                        </span>
+                      </p>
+                      <h4>Dekton</h4>
+                      <p>
+                        <i class="fas fa-dot-circle"></i>
+                        <span>
+                          <span class="faq-bold">Ultra-Compact & Seamless</span>
+                          – Extremely strong, resistant to heat, UV, and stains,
+                          with large slab sizes for a sleek, modern finish.
+                        </span>
+                      </p>
+                      <h4>Engineered Stone (Quartz)</h4>
+                      <p>
+                        <i class="fas fa-dot-circle"></i>
+                        <span>
+                          <span class="faq-bold"
+                            >Easy to Maintain & Durable</span
+                          >
+                          – Non-porous, stain-resistant, and scratch-resistant,
+                          making it ideal for busy kitchens.
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion__item">
+                  <div class="accordion__header">
+                    <span
+                      >What is the check measure, fabrication & installation
+                      process</span
+                    >
+                    <i class="fas fa-arrow-down"></i>
+                  </div>
+                  <div class="accordion__body">
+                    <div class="faq-content">
+                      <h4>Porcelain</h4>
+                      <p>
+                        <i class="fas fa-dot-circle"></i>
+                        <span>
+                          <span class="faq-bold"
+                            >Highly Durable & Low Maintenance</span
+                          >
+                          – Resistant to scratches, heat, and stains, with a
+                          non-porous surface that requires minimal upkeep.
+                        </span>
+                      </p>
+                      <h4>Dekton</h4>
+                      <p>
+                        <i class="fas fa-dot-circle"></i>
+                        <span>
+                          <span class="faq-bold">Ultra-Compact & Seamless</span>
+                          – Extremely strong, resistant to heat, UV, and stains,
+                          with large slab sizes for a sleek, modern finish.
+                        </span>
+                      </p>
+                      <h4>Engineered Stone (Quartz)</h4>
+                      <p>
+                        <i class="fas fa-dot-circle"></i>
+                        <span>
+                          <span class="faq-bold"
+                            >Easy to Maintain & Durable</span
+                          >
+                          – Non-porous, stain-resistant, and scratch-resistant,
+                          making it ideal for busy kitchens.
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="cubo" class="tab-content">
+              <div class="accordion">
+                <div class="accordion__item">
+                  <div class="accordion__header">
+                    <span>
+                      How Do I Choose the Right Kitchen Benchtop Surface?
+                    </span>
+                    <i class="fas fa-arrow-down"></i>
+                  </div>
+                  <div class="accordion__body">
+                    <div class="faq-content">
+                      <h4>Porcelain</h4>
+                      <p>
+                        <i class="fas fa-dot-circle"></i>
+                        <span>
+                          <span class="faq-bold"
+                            >Highly Durable & Low Maintenance</span
+                          >
+                          – Resistant to scratches, heat, and stains, with a
+                          non-porous surface that requires minimal upkeep.
+                        </span>
+                      </p>
+                      <h4>Dekton</h4>
+                      <p>
+                        <i class="fas fa-dot-circle"></i>
+                        <span>
+                          <span class="faq-bold">Ultra-Compact & Seamless</span>
+                          – Extremely strong, resistant to heat, UV, and stains,
+                          with large slab sizes for a sleek, modern finish.
+                        </span>
+                      </p>
+                      <h4>Engineered Stone (Quartz)</h4>
+                      <p>
+                        <i class="fas fa-dot-circle"></i>
+                        <span>
+                          <span class="faq-bold"
+                            >Easy to Maintain & Durable</span
+                          >
+                          – Non-porous, stain-resistant, and scratch-resistant,
+                          making it ideal for busy kitchens.
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion__item">
+                  <div class="accordion__header">
+                    <span
+                      >What is the check measure, fabrication & installation
+                      process</span
+                    >
+                    <i class="fas fa-arrow-down"></i>
+                  </div>
+                  <div class="accordion__body">
+                    <div class="faq-content">
+                      <h4>Porcelain</h4>
+                      <p>
+                        <i class="fas fa-dot-circle"></i>
+                        <span>
+                          <span class="faq-bold"
+                            >Highly Durable & Low Maintenance</span
+                          >
+                          – Resistant to scratches, heat, and stains, with a
+                          non-porous surface that requires minimal upkeep.
+                        </span>
+                      </p>
+                      <h4>Dekton</h4>
+                      <p>
+                        <i class="fas fa-dot-circle"></i>
+                        <span>
+                          <span class="faq-bold">Ultra-Compact & Seamless</span>
+                          – Extremely strong, resistant to heat, UV, and stains,
+                          with large slab sizes for a sleek, modern finish.
+                        </span>
+                      </p>
+                      <h4>Engineered Stone (Quartz)</h4>
+                      <p>
+                        <i class="fas fa-dot-circle"></i>
+                        <span>
+                          <span class="faq-bold"
+                            >Easy to Maintain & Durable</span
+                          >
+                          – Non-porous, stain-resistant, and scratch-resistant,
+                          making it ideal for busy kitchens.
+                        </span>
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -640,11 +865,13 @@
         <div class="container">
           <div class="footer-grid">
             <div class="footer-brand">
-              <img
-                src="./images/White-Form-rite_logo.svg"
-                alt="Form-Rite Co."
-                class="footer-logo"
-              />
+              <a href="./index.html">
+                <img
+                  src="./images/White-Form-rite_logo.svg"
+                  alt="Form-Rite Co."
+                  class="footer-logo"
+                />
+              </a>
               <p class="footer-tagline">
                 Explore Style, Quality and Innovation
               </p>
@@ -698,9 +925,12 @@
           <div class="footer-bottom">
             <div class="footer-legal">
               <p>
-                Copyright © 2025 Form Rite. All rights reserved.
-                <span class="dot-dot">•</span> <a href="#">Terms</a>
-                <span class="dot-dot">•</span> <a href="#">Privacy</a>
+                <span class="copyright">
+                  Copyright © 2025 Form Rite. All rights reserved. </span
+                ><span class="terms-service">
+                  <span class="dot-dot">•</span> <a href="#">Terms</a>
+                  <span class="dot-dot">•</span> <a href="#">Privacy</a></span
+                >
               </p>
             </div>
             <div class="footer-socials">
@@ -716,6 +946,7 @@
     </footer>
     <script src="./js/dropdown.js"></script>
     <script src="./js/main.js"></script>
+    <script src="./js/accordion.js"></script>
     <script src="./js/animations.js"></script>
   </body>
 </html>
