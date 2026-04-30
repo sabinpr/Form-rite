@@ -221,11 +221,48 @@
   margin-right: auto;
 }
 
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  margin-top: 9.6rem;
-  gap: 2.3rem;
+/* 1. Use block instead of grid */
+.products-grid {
+  display: block; /* MUST NOT BE GRID */
+
+  width: 100%;
+}
+
+/* 2. Clearfix for Isotope */
+.products-grid:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* 3. Set widths to create columns manually */
+.product-card {
+  /* Math: (100% - (Total Gaps)) / Number of Columns */
+  /* For 3 columns and a 2.3rem gap, there are 2 gaps total (4.6rem) */
+  width: calc((100% - 4.6rem) / 3);
+  margin-bottom: 2.3rem;
+  float: left;
+  box-sizing: border-box;
+}
+
+/* Tablet: 2 Columns (1 gap of 2.3rem) */
+@media (max-width: 1024px) {
+  .product-card {
+    width: calc((100% - 2.3rem) / 2);
+  }
+}
+
+/* Mobile: 1 Column (0 gaps) */
+@media (max-width: 480px) {
+  .product-card {
+    width: 100%;
+  }
+}
+
+/* Optional: style for the active filter link */
+.product-list a.active {
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .product-item {
@@ -294,6 +331,12 @@
   margin-top: 1.2rem;
   opacity: 1;
   max-height: 150px; /* Adjust to fit your text */
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 9.6rem;
+  gap: 2.3rem;
 }
 
 @media (max-width: 1024px) {
@@ -603,12 +646,6 @@
   padding-top: var(--section-split);
 }
 
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3.2rem 2.4rem;
-}
-
 .product-card p {
   display: flex;
   align-items: center;
@@ -669,16 +706,11 @@
 .about-section + .about-section {
   border-top: 1px solid var(--color-black);
 }
+
 @media (max-width: 1024px) {
-  .products-grid {
-    grid-template-columns: 1fr 1fr;
-  }
 }
 
 @media (max-width: 480px) {
-  .products-grid {
-    grid-template-columns: 1fr;
-  }
   .accordion__header {
     font-size: 1.6rem;
     line-height: 2rem;

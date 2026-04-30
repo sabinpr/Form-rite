@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const items = container.querySelectorAll(".reveal-item");
     items.forEach((item, index) => {
       // Add a 0.2s delay multiplied by the item's position (0s, 0.2s, 0.4s, etc.)
-      item.style.setProperty("--delay", `${index * 0.2}s`);
+      item.style.setProperty("--delay", `${index * 0.1 + 0.1}s`);
       observer.observe(item);
     });
   });

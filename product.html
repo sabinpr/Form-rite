@@ -17,6 +17,10 @@
 
     <!-- Splide JS -->
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <!-- ISOTOPE  -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
 
     <!-- CSS  -->
     <link rel="stylesheet" href="./css/base.css" />
@@ -259,6 +263,7 @@
         </div>
       </div>
     </section>
+
     <section id="porcelain" class="about-section padding-120">
       <div class="wrapper">
         <div class="container">
@@ -284,16 +289,17 @@
             <aside class="section-collection">
               <span class="section-label underline">Collections</span>
               <ul class="product-list">
-                <li><a href="#">Worktops</a></li>
-                <li><a href="#">Engineered Stone</a></li>
-                <li><a href="#">Lanimate</a></li>
-                <li><a href="#">Ultra Compact</a></li>
+                <li><a href="#" data-filter="*">All Collections</a></li>
+                <li><a href="#" data-filter=".worktop">Worktops</a></li>
+                <li><a href="#" data-filter=".stone">Engineered Stone</a></li>
+                <li><a href="#" data-filter=".lanimate">Lanimate</a></li>
+                <li><a href="#" data-filter=".ultra">Ultra Compact</a></li>
               </ul>
             </aside>
             <div class="section-content">
               <div class="products-grid">
                 <!-- Card 1 -->
-                <div class="product-card reveal-item">
+                <div class="product-card stone">
                   <a href="#">
                     <div class="image-container">
                       <img
@@ -306,7 +312,7 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div class="product-card reveal-item">
+                <div class="product-card ultra">
                   <a href="#">
                     <div class="image-container">
                       <img
@@ -322,7 +328,7 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div class="product-card reveal-item">
+                <div class="product-card worktop">
                   <a href="#">
                     <div class="image-container">
                       <img
@@ -338,7 +344,7 @@
                 </div>
 
                 <!-- Card 4 -->
-                <div class="product-card reveal-item">
+                <div class="product-card stone">
                   <a href="#">
                     <div class="image-container">
                       <img
@@ -351,7 +357,7 @@
                 </div>
 
                 <!-- Card 5 -->
-                <div class="product-card reveal-item">
+                <div class="product-card lanimate">
                   <a href="#">
                     <div class="image-container">
                       <img
@@ -364,7 +370,7 @@
                 </div>
 
                 <!-- Card 6 -->
-                <div class="product-card reveal-item">
+                <div class="product-card ultra">
                   <a href="#">
                     <div class="image-container">
                       <img
@@ -377,7 +383,7 @@
                 </div>
 
                 <!-- Card 7 -->
-                <div class="product-card reveal-item">
+                <div class="product-card lanimate">
                   <a href="#">
                     <div class="image-container">
                       <img
@@ -390,7 +396,7 @@
                 </div>
 
                 <!-- Card 8 -->
-                <div class="product-card reveal-item">
+                <div class="product-card worktop">
                   <a href="#">
                     <div class="image-container">
                       <img
@@ -405,7 +411,7 @@
                 </div>
 
                 <!-- Card 9 -->
-                <div class="product-card reveal-item">
+                <div class="product-card stone">
                   <a href="#">
                     <div class="image-container">
                       <img
@@ -447,14 +453,18 @@
             <aside class="section-collection">
               <span class="section-label underline">Collections</span>
               <ul class="product-list">
-                <li><a href="#">Dining Tables</a></li>
-                <li><a href="#">Storage</a></li>
+                <!-- * indicates show everything -->
+                <li><a href="#" data-filter="*">All Collections</a></li>
+                <!-- .table matches the class "table" on your cards -->
+                <li><a href="#" data-filter=".table">Dining Tables</a></li>
+                <!-- .storage matches the class "storage" on your cards -->
+                <li><a href="#" data-filter=".storage">Storage</a></li>
               </ul>
             </aside>
             <div class="section-content">
               <div class="products-grid">
                 <!-- Card 1 -->
-                <div class="product-card reveal-item">
+                <div class="product-card table">
                   <a href="#">
                     <div class="image-container">
                       <img
@@ -467,7 +477,7 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div class="product-card reveal-item">
+                <div class="product-card storage">
                   <a href="#">
                     <div class="image-container">
                       <img
@@ -480,7 +490,7 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div class="product-card reveal-item">
+                <div class="product-card table">
                   <a href="#">
                     <div class="image-container">
                       <img
@@ -496,7 +506,7 @@
                 </div>
 
                 <!-- Card 4 -->
-                <div class="product-card reveal-item">
+                <div class="product-card storage">
                   <a href="#">
                     <div class="image-container">
                       <img
@@ -509,7 +519,7 @@
                 </div>
 
                 <!-- Card 5 -->
-                <div class="product-card reveal-item">
+                <div class="product-card table">
                   <a href="#">
                     <div class="image-container">
                       <img
@@ -522,7 +532,7 @@
                 </div>
 
                 <!-- Card 6 -->
-                <div class="product-card reveal-item">
+                <div class="product-card storage">
                   <a href="#">
                     <div class="image-container">
                       <img
@@ -535,7 +545,7 @@
                 </div>
 
                 <!-- Card 7 -->
-                <div class="product-card reveal-item">
+                <div class="product-card table">
                   <a href="#">
                     <div class="image-container">
                       <img
@@ -548,7 +558,7 @@
                 </div>
 
                 <!-- Card 8 -->
-                <div class="product-card reveal-item">
+                <div class="product-card storage">
                   <a href="#">
                     <div class="image-container">
                       <img
@@ -561,7 +571,7 @@
                 </div>
 
                 <!-- Card 9 -->
-                <div class="product-card reveal-item">
+                <div class="product-card storage">
                   <a href="#">
                     <div class="image-container">
                       <img
@@ -743,6 +753,7 @@
     </footer>
     <script src="./js/dropdown.js"></script>
     <script src="./js/main.js"></script>
+    <script src="./js/isotopes.js"></script>
     <script src="./js/animations.js"></script>
   </body>
 </html>
