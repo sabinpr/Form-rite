@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="stylesheet" href="./css/main-responsive.css" />
     <link rel="stylesheet" href="./css/inner-content.css" />
+    <link rel="stylesheet" href="./css/animations.css" />
   </head>
   <body class="site-wrapper">
     <!-- HEADER NAVIGATION -->
@@ -107,7 +108,7 @@
     <section id="about" class="about-section padding-120">
       <div class="wrapper">
         <div class="container">
-          <div class="section-split">
+          <div class="section-split reveal-item">
             <aside class="section-label">ABOUT US</aside>
             <div class="section-content">
               <h2 class="section-heading about-section-heading">
@@ -135,7 +136,7 @@
 
     <!-- Image Gallery  -->
     <section class="image-gallery">
-      <div class="splide" id="image-carousel">
+      <div class="splide reveal-item" id="image-carousel">
         <div class="splide__track">
           <ul class="splide__list">
             <!-- Slide 1 -->
@@ -208,7 +209,7 @@
     </section>
     <!-- INSPIRATION SECTION -->
     <section id="inspiration" class="inspiration-section padding-120">
-      <div class="section-split-inspiration">
+      <div class="section-split-inspiration reveal-item">
         <div class="left-inspiration">
           <aside class="inspiration-sidebar">
             <span class="section-label">INSPIRATION</span>
@@ -222,22 +223,26 @@
           </aside>
         </div>
 
-        <div class="project-list">
+        <div class="project-list reveal-item">
           <!-- Project Item -->
           <article class="project-card">
-            <div class="project-card__image-wrapper">
-              <img
-                src="./images/product-1.png"
-                alt="Guy Sebastian Project"
-                class="project-card__image"
-              />
-            </div>
-            <div class="project-card__details">
-              <span class="project-card__meta">Project Category ———— Date</span>
-              <h3 class="project-card__title">
-                <span>GUY SEBASTIAN</span> <i class="fas fa-arrow-right"></i>
-              </h3>
-            </div>
+            <a href="./inspiration-detail.html">
+              <div class="project-card__image-wrapper">
+                <img
+                  src="./images/product-1.png"
+                  alt="Guy Sebastian Project"
+                  class="project-card__image"
+                />
+              </div>
+              <div class="project-card__details">
+                <span class="project-card__meta"
+                  >Project Category ———— Date</span
+                >
+                <h3 class="project-card__title">
+                  <span>GUY SEBASTIAN</span> <i class="fas fa-arrow-right"></i>
+                </h3>
+              </div>
+            </a>
           </article>
 
           <!-- Project Item -->
@@ -372,7 +377,7 @@
     <section class="testimonials padding-120">
       <div class="wrapper">
         <!-- 1. Added 'splide' class here -->
-        <div class="container splide" id="testimonial-slider">
+        <div class="container splide reveal-item" id="testimonial-slider">
           <!-- CUSTOM ARROWS -->
           <div class="splide__arrows">
             <button class="splide__arrow splide__arrow--prev">
@@ -556,7 +561,7 @@
     <section class="contact-section">
       <div class="wrapper">
         <div class="container">
-          <div class="contact-card">
+          <div class="contact-card reveal-item">
             <!-- LEFT: Info & Wave -->
             <div class="contact-card__info">
               <div class="contact-card__text-content">
@@ -711,5 +716,6 @@
     </footer>
     <script src="./js/dropdown.js"></script>
     <script src="./js/main.js"></script>
+    <script src="./js/animations.js"></script>
   </body>
 </html>

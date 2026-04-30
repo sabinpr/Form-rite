@@ -1,6 +1,7 @@
 @import url("https://fonts.cdnfonts.com/css/almarai");
 @import url("https://fonts.cdnfonts.com/css/inter");
 @import url("https://fonts.cdnfonts.com/css/futura-lt");
+
 :root {
   /* Font  */
   --heading-font: "Almarai", sans-serif;
@@ -42,7 +43,10 @@ html {
   /* Prevent Safari from overriding font sizes */
   -webkit-text-size-adjust: 100%;
 }
+/* Animation  */
+
 /* --- Base Body Styles --- */
+
 body {
   font-family: var(--body-font);
   font-size: 1.6rem; /* Becomes 16px due to 62.5% html font-size */

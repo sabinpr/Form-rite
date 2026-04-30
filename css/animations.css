@@ -1,0 +1,17 @@
+/* The starting state for every animated element */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(60px); /* Start 60px lower */
+  transition:
+    transform 1.2s cubic-bezier(0.2, 1, 0.3, 1),
+    opacity 1.2s ease-out;
+  /* This delay is set by JavaScript */
+  transition-delay: var(--delay, 0s);
+  will-change: transform, opacity;
+}
+
+/* The state when the element enters the screen */
+.reveal-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
